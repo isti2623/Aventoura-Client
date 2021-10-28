@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import Service from '../Service/Service';
+
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
@@ -7,6 +9,7 @@ const Services = () => {
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
+
     return (
         <div className='container py-5'>
             <div className='container about-part'>
@@ -17,22 +20,10 @@ const Services = () => {
                 </h2>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
-                        services.map(service =>
-                            <div className="col">
-                                <div className="card h-100">
-                                    <img src={service.image} className="card-img-top" alt="..." />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{service.title}</h5>
-                                        <p className="card-text">{service.desc}</p>
-                                    </div>
-                                    <div className="card-footer">
-                                        <div className="btn btn-warning fw-bold">BOOK NOW</div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        )
+                        services.map(service => <Service
+                            key={service._id}
+                            service={service}
+                        ></Service>)
 
                     }
 
