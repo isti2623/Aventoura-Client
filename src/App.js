@@ -13,40 +13,47 @@ import MyOrders from './components/MyOrders/MyOrders';
 import ManageOrders from './components/ManageOrders/ManageOrders';
 import AddServices from './components/AddServices/AddServices';
 import Footer from './components/Footer/Footer';
+import AuthProvider from './context/AuthProvider';
+import Login from './components/Login/Login';
 
 function App() {
   return (
     <div>
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route path='/about'>
-            <About></About>
-          </Route>
-          <Route path='/services'>
-            <Services></Services>
-          </Route>
-          <Route path='/client'>
-            <Client></Client>
-          </Route>
-          <Route path='/myOrders'>
-            <MyOrders></MyOrders>
-          </Route>
-          <Route path='/manageOrders'>
-            <ManageOrders></ManageOrders>
-          </Route>
-          <Route path='/addServices'>
-            <AddServices></AddServices>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route path='/about'>
+              <About></About>
+            </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <Route path='/services'>
+              <Services></Services>
+            </Route>
+            <Route path='/client'>
+              <Client></Client>
+            </Route>
+            <Route path='/myOrders'>
+              <MyOrders></MyOrders>
+            </Route>
+            <Route path='/manageOrders'>
+              <ManageOrders></ManageOrders>
+            </Route>
+            <Route path='/addServices'>
+              <AddServices></AddServices>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

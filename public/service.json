@@ -1,0 +1,38 @@
+[
+    {
+        "image": "https://i.ibb.co/L1zTPRN/nevanda.jpg",
+        "title": "Sierra Nevada Tour",
+        "desc": " We are in the process of reopening our Taprooms and Gift Shops. To ensure a safe and effective opening requires the effort of all Guest Experience staff, including Tour Guides",
+        "price": 899
+    },
+    {
+        "image": "https://i.ibb.co/3FqBjx1/opthalmology.jpg",
+        "title": "Hiking at Newzealand",
+        "desc": "We can’t wait to bring back tour experiences for our guests! Safety and quality are our top priorities.",
+        "price": 699
+    },
+    {
+        "image": "https://i.ibb.co/6vjPM3t/family.jpg",
+        "title": "Family Outbound",
+        "desc": " travel for pleasure or business; also the theory and practice of touring, the business of attracting, accommodating, and entertaining.",
+        "price": 999
+    },
+    {
+        "image": "https://i.ibb.co/JBrRgSz/teen.jpg",
+        "title": "Teen Campaing Tour",
+        "desc": " The World Travel & Tourism Council (WTTC) represents the Travel & Tourism sector globally. Our Members include over 200 CEOs, Chairpersons and Presidents.",
+        "price": 399
+    },
+    {
+        "image": "https://i.ibb.co/BVXDJhm/Indonesia.jpg",
+        "title": "Explore Indonesian Forest",
+        "desc": " Tourism is a social, cultural and economic phenomenon which entails the movement of people to countries or places outside their usual environment for .",
+        "price": 599
+    },
+    {
+        "image": "https://i.ibb.co/MhKT5Zx/Joota.jpg",
+        "title": "Hiking at Jogja",
+        "desc": "We’re tucked into the forest, so make the most of this escape. Choose from 23 beers on tap, sample Southern-inspired small plates.",
+        "price": 499
+    }
+]
