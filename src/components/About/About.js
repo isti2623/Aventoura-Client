@@ -11,7 +11,7 @@ const About = () => {
                         <img src={about} alt="" />
                     </div>
                     <div className="col-lg-6">
-                        <div className=' ms-5 my-5'>
+                        <div className=' ms-5 mt-5'>
                             <h2 className='fw-bold text-warning'>ABOUT US</h2>
                             <h2 className='custom-h2 mt-5'>Travel the <span className='text-primary'>world</span> one <span className='text-primary'>place</span> at a time
                             </h2>
