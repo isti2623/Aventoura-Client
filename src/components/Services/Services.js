@@ -20,7 +20,7 @@ const Services = () => {
                                     <p className="card-text">{service.desc}</p>
                                 </div>
                                 <div className="card-footer">
-                                    <div className="btn btn-warning">BOOK NOW</div>
+                                    <div className="btn btn-warning fw-bold">BOOK NOW</div>
                                 </div>
                             </div>
                         </div>
