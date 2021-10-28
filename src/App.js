@@ -15,8 +15,7 @@ import AddServices from './components/AddServices/AddServices';
 import Footer from './components/Footer/Footer';
 import AuthProvider from './context/AuthProvider';
 import Login from './components/Login/Login';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import ServiceDetails from './components/ServiceDetails/ServiceDetails';
+
 
 function App() {
   return (
@@ -40,9 +39,6 @@ function App() {
             <Route path='/services'>
               <Services></Services>
             </Route>
-            <PrivateRoute exact path='/servicedetails/:serviceId'>
-              <ServiceDetails></ServiceDetails>
-            </PrivateRoute>
             <Route path='/client'>
               <Client></Client>
             </Route>
