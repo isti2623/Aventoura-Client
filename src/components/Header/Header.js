@@ -4,9 +4,28 @@ import { Container, Nav, Navbar, Stack, Button } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
 import useAuth from '../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
+import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
     const { user, logout } = useAuth();
+    const {
+        signInUsingGoogle,
+
+    } = useFirebase();
+
+
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home'
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri)
+            })
+    }
+
     return (
         <div>
             <Navbar collapseOnSelect navbar-collapse expand="lg" bg="light" variant="light">
@@ -98,7 +117,7 @@ const Header = () => {
                                         user.email ?
                                             <Button onClick={logout} className='menu-btn' variant="warning"> Logout</Button>
                                             :
-                                            <Link to='/login'><Button className='menu-btn' variant="warning"> Login</Button></Link>
+                                            <Link to='/login'><Button onClick={handleGoogleLogin} className='menu-btn' variant="warning"> Login</Button></Link>
                                     }
 
                                 </div>
