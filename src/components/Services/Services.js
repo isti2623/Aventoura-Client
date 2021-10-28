@@ -9,7 +9,7 @@ const Services = () => {
     }, [])
     return (
         <div className='container py-5'>
-            <div className='container about-part '>
+            <div className='container about-part'>
                 <h2 className='fw-bold text-warning text-center'>SERVICES
                 </h2>
                 <h2 className='custom-h2 mt-5 text-center mb-5'>Your Best Choice

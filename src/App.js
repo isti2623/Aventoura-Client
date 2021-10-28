@@ -33,12 +33,12 @@ function App() {
             <Route path='/about'>
               <About></About>
             </Route>
-            {<Route path='/login'>
+            <Route path='/login'>
               <Login></Login>
-            </Route>}
-            <PrivateRoute path='/services'>
+            </Route>
+            <Route path='/services'>
               <Services></Services>
-            </PrivateRoute>
+            </Route>
             <Route path='/client'>
               <Client></Client>
             </Route>
