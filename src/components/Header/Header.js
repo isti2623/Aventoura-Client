@@ -75,42 +75,48 @@ const Header = () => {
                                 >
                                     Client
                                 </NavLink>
-                                <NavLink
-                                    className='text-decoration-none fs-5 text-warning ms-2'
-                                    to="/myOrders"
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "red"
-                                    }}
-                                >
-                                    MyOrders
-                                </NavLink>
-                                <NavLink
-                                    className='text-decoration-none fs-5 text-warning ms-2'
-                                    to="/manageOrders"
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "red"
-                                    }}
-                                >
-                                    ManageOrders
-                                </NavLink>
-                                <NavLink
-                                    className='text-decoration-none fs-5 text-warning ms-2'
-                                    to="/addServices"
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "red"
-                                    }}
-                                >
-                                    AddNewServices
-                                </NavLink>
+                                {
+                                    user.email &&
+                                    <div className='ms-2'>
+                                        <NavLink
+                                            className='text-decoration-none fs-5 text-warning ms-3'
+                                            to="/myOrders"
+                                            activeStyle={{
+                                                fontWeight: "bold",
+                                                color: "red"
+                                            }}
+                                        >
+                                            MyOrders
+                                        </NavLink>
+                                        <NavLink
+                                            className='text-decoration-none fs-5 text-warning ms-3'
+                                            to="/manageOrders"
+                                            activeStyle={{
+                                                fontWeight: "bold",
+                                                color: "red"
+                                            }}
+                                        >
+                                            ManageOrders
+                                        </NavLink>
+                                        <NavLink
+                                            className='text-decoration-none fs-5 text-warning ms-3'
+                                            to="/addServices"
+                                            activeStyle={{
+                                                fontWeight: "bold",
+                                                color: "red"
+                                            }}
+                                        >
+                                            AddNewServices
+                                        </NavLink>
+                                    </div>
+                                }
 
 
                                 <div className='container'>
 
-                                    <img className='details-header ms-2 mt-2' src={user.photoURL} alt="" />
-                                    <span className='text-dark fw-bold'>{user.displayName}</span>
+                                    <img className='details-header  mt-2 ms-3' src={user.photoURL} alt="" />
+                                    <br />
+                                    <span className='text-dark fw-bold ms-2'>{user.displayName}</span>
 
 
                                     {
