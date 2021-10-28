@@ -33,7 +33,7 @@ const Client = () => {
                     </div>
                     <div className="col-lg-4">
                         <div className='card p-3 text-center'>
-                            <p>The Tangible Words team have been on our radar for some time. However we had not had occasion to use their comprehensive services until October year</p>
+                            <p>Tourism's Sustainable Future Outlined at Barcelona Summit ... build a more prosperous and peaceful world through tourism, we will not leave anyone behind</p>
                             <div className='mt-2'>
                                 <img className='details-header' src={clientOne} alt="" />
                             </div>
@@ -49,7 +49,7 @@ const Client = () => {
                     </div>
                     <div className="col-lg-4">
                         <div className='card p-3 text-center'>
-                            <p>The Tangible Words team have been on our radar for some time. However we had not had occasion to use their comprehensive services until October year</p>
+                            <p>The act and process of spending time away from home in pursuit of recreation, relaxation, and pleasure, while making use of the</p>
                             <div className='mt-2'>
                                 <img className='details-header' src={clientThree} alt="" />
                             </div>
