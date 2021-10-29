@@ -15,6 +15,8 @@ import AddServices from './components/AddServices/AddServices';
 import Footer from './components/Footer/Footer';
 import AuthProvider from './context/AuthProvider';
 import Login from './components/Login/Login';
+import ServiceDetails from './components/ServiceDetails/ServiceDetails';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -48,6 +50,10 @@ function App() {
             <Route path='/manageOrders'>
               <ManageOrders></ManageOrders>
             </Route>
+
+            <PrivateRoute exact path='/servicedetails/:serviceId'>
+              <ServiceDetails></ServiceDetails>
+            </PrivateRoute>
             <Route path='/addServices'>
               <AddServices></AddServices>
             </Route>
