@@ -18,6 +18,7 @@ import Login from './components/Login/Login';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import UpdateOrders from './components/UpdateOrders/UpdateOrders';
+import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
@@ -60,6 +61,9 @@ function App() {
             </Route>
             <Route path="/orders/update/:productId">
               <UpdateOrders></UpdateOrders>
+            </Route>
+            <Route path='*'>
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>
