@@ -41,8 +41,9 @@ const UpdateOrders = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
                 <input
-
+                    type="number"
                     className="p-2 m-2"
+                    placeholder='phone'
                     defaultValue={product?.phone}
                     {...register("phone")}
                     required
@@ -51,6 +52,7 @@ const UpdateOrders = () => {
                 <input
                     className="p-2 m-2"
                     type="text"
+                    placeholder='address'
                     defaultValue={product?.address}
                     {...register("address", { required: true })}
                     required

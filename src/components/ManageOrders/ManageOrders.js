@@ -56,6 +56,7 @@ const ManageOrders = () => {
                         <th>#</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Place Name</th>
                         <th>Phone</th>
                         <th>Address</th>
                     </tr>
@@ -66,6 +67,7 @@ const ManageOrders = () => {
                             <td>{index}</td>
                             <td>{pd?.name}</td>
                             <td>{pd?.email}</td>
+                            <td>{pd?.serviceId}</td>
                             <td>{pd?.phone}</td>
                             <td>{pd?.address}</td>
                             <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button>
