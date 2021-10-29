@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ManageOrders = () => {
     const [order, setOrder] = useState([]);
@@ -9,6 +10,43 @@ const ManageOrders = () => {
             .then((res) => res.json())
             .then((data) => setOrder(data));
     }, []);
+
+
+    //Delete Part
+
+    const [orders, setOrders] = useState([]);
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/orders')
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data);
+                console.log(products);
+            })
+    }, [products]);
+
+    //DELETE AN Products
+    const handleDeleteUser = id => {
+        const proceed = window.confirm('Are you sure, you want to delete?');
+        if (proceed) {
+            const url = `http://localhost:5000/orders/${id}`
+            fetch(url, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('deleted successfully');
+                        console.log(data);
+                        const remainingProducts = orders.filter(order => order._id !== id);
+                        console.log(remainingProducts);
+                        console.log(products);
+                        setOrders(remainingProducts);
+                    }
+                })
+        }
+
+    }
     return (
         <div className='container'>
             <h1 className='text-center my-3'>All Orders: {order?.length}</h1>
@@ -30,7 +68,8 @@ const ManageOrders = () => {
                             <td>{pd?.email}</td>
                             <td>{pd?.phone}</td>
                             <td>{pd?.address}</td>
-                            <button className="btn bg-warning p-2">Delete</button>
+                            <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button>
+                            <Link to={`events/update/${pd._id}`}> <Button className='ms-5' variant="success">Edit</Button></Link>
                         </tr>
                     </tbody>
                 ))}
