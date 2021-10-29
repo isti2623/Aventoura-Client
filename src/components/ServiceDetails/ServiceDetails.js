@@ -7,7 +7,7 @@ const ServiceDetails = () => {
     const { serviceId } = useParams();
     const [serv, setServ] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://radiant-escarpment-31543.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServ(data))
     }, [])
@@ -27,7 +27,7 @@ const ServiceDetails = () => {
 
 
         console.log(data);
-        fetch("http://localhost:5000/orders", {
+        fetch("https://radiant-escarpment-31543.herokuapp.com/orders", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
