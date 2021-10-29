@@ -24,7 +24,6 @@ const ServiceDetails = () => {
         data.email = user.email;
         data.name = user.displayName;
         data.serviceId = findServ?.title;
-        data.serviceId = findServ?.image;
 
 
         console.log(data);
