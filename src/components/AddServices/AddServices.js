@@ -46,7 +46,7 @@ const AddServices = () => {
                     {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}
                     <br />
-                    <input className='btn btn-success ms-2' type="submit" />
+                    <input className='btn btn-warning ms-2' value='Add Service' type="submit" />
                 </form>
             </div>
         </div>
