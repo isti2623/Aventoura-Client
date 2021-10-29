@@ -33,15 +33,15 @@ const AddServices = () => {
             <div className='form-part'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}
-                    <input required className='p-2 m-2' placeholder='title' {...register("title")} />
+                    <input required className='p-2 m-2' type='text' placeholder='title' {...register("title")} />
                     <br />
 
                     {/* include validation with required or other standard HTML validation rules */}
-                    <input required className='p-2 m-2' placeholder='image-url' {...register("image")} />
+                    <input required className='p-2 m-2' type='text' placeholder='image-url' {...register("image")} />
                     <br />
-                    <input required className='p-2 m-2' placeholder='description' {...register("desc")} />
+                    <input required className='p-2 m-2' type='text' placeholder='description' {...register("desc")} />
                     <br />
-                    <input required className='p-2 m-2' placeholder='price' {...register("price")} />
+                    <input required className='p-2 m-2' type='number' placeholder='price' {...register("price")} />
                     <br />
                     {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}

@@ -68,7 +68,7 @@ const ServiceDetails = () => {
                     <br />
 
                     {/* include validation with required or other standard HTML validation rules */}
-                    <input required className='p-2 m-2' placeholder='phone number' {...register("phone")} />
+                    <input required className='p-2 m-2' placeholder='phone number' type='number' {...register("phone")} />
                     <br />
                     {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}
