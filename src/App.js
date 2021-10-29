@@ -17,6 +17,7 @@ import AuthProvider from './context/AuthProvider';
 import Login from './components/Login/Login';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import UpdateOrders from './components/UpdateOrders/UpdateOrders';
 
 
 function App() {
@@ -56,6 +57,9 @@ function App() {
             </PrivateRoute>
             <Route path='/addServices'>
               <AddServices></AddServices>
+            </Route>
+            <Route path="/orders/update/:productId">
+              <UpdateOrders></UpdateOrders>
             </Route>
           </Switch>
           <Footer></Footer>

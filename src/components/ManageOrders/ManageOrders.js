@@ -69,7 +69,7 @@ const ManageOrders = () => {
                             <td>{pd?.phone}</td>
                             <td>{pd?.address}</td>
                             <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button>
-                            <Link to={`events/update/${pd._id}`}> <Button className='ms-5' variant="success">Edit</Button></Link>
+                            <Link to={`orders/update/${pd._id}`}> <Button className='ms-5' variant="success">Edit</Button></Link>
                         </tr>
                     </tbody>
                 ))}
