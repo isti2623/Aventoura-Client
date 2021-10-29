@@ -1,6 +1,6 @@
 ## Aventoura
 ---
-is a full-stack web-based application that offers different types of volunteer jobs to the people.
+is a full-stack web-based application that offers different types of Traveling jobs to the people.
 
 Live Site:  **[ Aventoura ]( https://aventoura.web.app/)**. 
 
