@@ -10,7 +10,7 @@ const AddServices = () => {
         console.log(data);
         data.email = user.email;
         console.log(data);
-        fetch("http://localhost:5000/addServices", {
+        fetch("https://radiant-escarpment-31543.herokuapp.com/addServices", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

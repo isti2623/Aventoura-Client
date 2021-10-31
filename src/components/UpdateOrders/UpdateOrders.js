@@ -9,7 +9,7 @@ const UpdateOrders = () => {
     useEffect(() => {
         fetch(`https://radiant-escarpment-31543.herokuapp.com/orders/${productId}`)
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => setProduct(data));
     }, [productId]);
 
 
@@ -19,7 +19,7 @@ const UpdateOrders = () => {
         formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
-        console.log(data);
+
         fetch(`https://radiant-escarpment-31543.herokuapp.com/orders/${productId}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
@@ -33,7 +33,7 @@ const UpdateOrders = () => {
                     setIsUpdated(false);
                 }
             });
-        console.log(data);
+
     };
     return (
         <div>
