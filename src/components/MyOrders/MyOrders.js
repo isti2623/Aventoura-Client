@@ -7,7 +7,7 @@ const MyOrders = () => {
     const { user } = useAuth();
     const [events, setEvents] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user?.email}`)
+        fetch(`https://radiant-escarpment-31543.herokuapp.com/myOrders/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setEvents(data));
     }, [user.email, events]);
@@ -20,7 +20,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://radiant-escarpment-31543.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -32,7 +32,7 @@ const MyOrders = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/allOrders/${id}`
+            const url = `https://radiant-escarpment-31543.herokuapp.com/allOrders/${id}`
             fetch(url, {
                 method: 'DELETE',
             })

@@ -7,7 +7,7 @@ const ManageOrders = () => {
     const [reload, setReload] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:5000/orders")
+        fetch("https://radiant-escarpment-31543.herokuapp.com/orders")
             .then((res) => res.json())
             .then((data) => {
                 setReload(!reload)
@@ -15,14 +15,14 @@ const ManageOrders = () => {
             });
 
     }, [reload]);
-    console.log(order)
+
 
     //Delete Part
 
     // const [orders, setOrders] = useState([]);
     // const [products, setProducts] = useState([]);
     // useEffect(() => {
-    //     fetch('http://localhost:5000/orders')
+    //     fetch('https://radiant-escarpment-31543.herokuapp.com/orders')
     //         .then(res => res.json())
     //         .then(data => {
     //             setProducts(data);
@@ -34,7 +34,7 @@ const ManageOrders = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://radiant-escarpment-31543.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
@@ -55,7 +55,7 @@ const ManageOrders = () => {
     function handleConfirm(id) {
         const proceed = window.confirm('Are you sure, you want to Confirm?');
         if (proceed) {
-            const url = `http://localhost:5000/confirm/${id}`
+            const url = `https://radiant-escarpment-31543.herokuapp.com/confirm/${id}`
             fetch(url, {
                 method: 'PUT',
             })
