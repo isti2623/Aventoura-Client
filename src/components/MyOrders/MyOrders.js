@@ -10,7 +10,7 @@ const MyOrders = () => {
         fetch(`https://radiant-escarpment-31543.herokuapp.com/myOrders/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setEvents(data));
-    }, [user.email]);
+    }, [user.email, events]);
 
 
 

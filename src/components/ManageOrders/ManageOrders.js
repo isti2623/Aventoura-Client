@@ -9,7 +9,7 @@ const ManageOrders = () => {
         fetch("https://radiant-escarpment-31543.herokuapp.com/orders")
             .then((res) => res.json())
             .then((data) => setOrder(data));
-    }, []);
+    }, [order]);
 
 
     //Delete Part
@@ -23,7 +23,7 @@ const ManageOrders = () => {
                 setProducts(data);
 
             })
-    }, [products]);
+    }, []);
 
     //DELETE AN Products
     const handleDeleteUser = id => {
