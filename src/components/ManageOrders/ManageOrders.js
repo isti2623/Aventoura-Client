@@ -21,7 +21,7 @@ const ManageOrders = () => {
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
-                console.log(products);
+
             })
     }, [products]);
 
@@ -37,10 +37,9 @@ const ManageOrders = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         alert('deleted successfully');
-                        console.log(data);
+
                         const remainingProducts = orders.filter(order => order._id !== id);
-                        console.log(remainingProducts);
-                        console.log(products);
+
                         setOrders(remainingProducts);
                     }
                 })
@@ -59,6 +58,7 @@ const ManageOrders = () => {
                         <th>Place Name</th>
                         <th>Phone</th>
                         <th>Address</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 {order?.map((pd, index) => (
@@ -70,8 +70,8 @@ const ManageOrders = () => {
                             <td>{pd?.serviceId}</td>
                             <td>{pd?.phone}</td>
                             <td>{pd?.address}</td>
-                            <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button>
-                            <Link to={`orders/update/${pd._id}`}> <Button className='ms-5' variant="success">Edit</Button></Link>
+                            <td> <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button>
+                                <Link to={`orders/update/${pd._id}`}> <Button className='ms-5' variant="success">Edit</Button></Link></td>
                         </tr>
                     </tbody>
                 ))}

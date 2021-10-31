@@ -12,8 +12,7 @@ const MyOrders = () => {
             .then((data) => setEvents(data));
     }, [user.email]);
 
-    console.log(events);
-    console.log(events);
+
 
 
     //Delete Part
@@ -25,7 +24,7 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
-                console.log(products);
+
             })
     }, [products]);
 
@@ -41,10 +40,9 @@ const MyOrders = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         alert('deleted successfully');
-                        console.log(data);
+
                         const remainingProducts = orders.filter(order => order._id !== id);
-                        console.log(remainingProducts);
-                        console.log(products);
+
                         setOrders(remainingProducts);
                     }
                 })
@@ -54,7 +52,7 @@ const MyOrders = () => {
     return (
         <div className='container'>
             <h1 className='text-center my-3'>My Orders: {events?.length}</h1>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                         <th>#</th>
@@ -63,6 +61,7 @@ const MyOrders = () => {
                         <th>Place Name</th>
                         <th>Phone</th>
                         <th>Address</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 {events?.map((pd, index) => (
@@ -74,7 +73,7 @@ const MyOrders = () => {
                             <td>{pd?.serviceId}</td>
                             <td>{pd?.phone}</td>
                             <td>{pd?.address}</td>
-                            <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button>
+                            <td><button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button></td>
 
                         </tr>
                     </tbody>

@@ -34,101 +34,101 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
-                            <Stack direction="horizontal" gap={5}>
-                                <NavLink
-                                    className='text-decoration-none fs-5 text-warning ms-3'
-                                    to="/home"
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "red"
-                                    }}
-                                >
-                                    Home
-                                </NavLink>
-                                <NavLink
-                                    className='text-decoration-none fs-5 text-warning'
-                                    to="/about"
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "red"
-                                    }}
-                                >
-                                    About
-                                </NavLink>
-                                <NavLink
-                                    className='text-decoration-none fs-5 text-warning'
-                                    to="/services"
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "red"
-                                    }}
-                                >
-                                    Services
-                                </NavLink>
-                                <NavLink
-                                    className='text-decoration-none fs-5 text-warning ms-2'
-                                    to="/client"
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "red"
-                                    }}
-                                >
-                                    Client
-                                </NavLink>
+
+                            <NavLink
+                                className='text-decoration-none mx-3 fs-5 text-warning ms-3'
+                                to="/home"
+                                activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "red"
+                                }}
+                            >
+                                Home
+                            </NavLink>
+                            <NavLink
+                                className='text-decoration-none mx-3 fs-5 text-warning'
+                                to="/about"
+                                activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "red"
+                                }}
+                            >
+                                About
+                            </NavLink>
+                            <NavLink
+                                className='text-decoration-none mx-3 fs-5 text-warning'
+                                to="/services"
+                                activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "red"
+                                }}
+                            >
+                                Services
+                            </NavLink>
+                            <NavLink
+                                className='text-decoration-none mx-3 fs-5 text-warning ms-2'
+                                to="/client"
+                                activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "red"
+                                }}
+                            >
+                                Client
+                            </NavLink>
+                            {
+                                user.email &&
+                                <div className='ms-2'>
+                                    <NavLink
+                                        className='text-decoration-none  fs-5 text-warning'
+                                        to="/myOrders"
+                                        activeStyle={{
+                                            fontWeight: "bold",
+                                            color: "red"
+                                        }}
+                                    >
+                                        MyOrders
+                                    </NavLink>
+                                    <NavLink
+                                        className='text-decoration-none fs-5 text-warning ms-2'
+                                        to="/manageOrders"
+                                        activeStyle={{
+                                            fontWeight: "bold",
+                                            color: "red"
+                                        }}
+                                    >
+                                        ManageOrders
+                                    </NavLink>
+                                    <NavLink
+                                        className='text-decoration-none fs-5 text-warning ms-2'
+                                        to="/addServices"
+                                        activeStyle={{
+                                            fontWeight: "bold",
+                                            color: "red"
+                                        }}
+                                    >
+                                        AddNewServices
+                                    </NavLink>
+                                </div>
+                            }
+
+
+                            <div className='container'>
+
+                                <img className='details-header  mt-2 ms-3' src={user.photoURL} alt="" />
+                                <br />
+                                <span className='text-dark fw-bold ms-2'>{user.displayName}</span>
+
+
                                 {
-                                    user.email &&
-                                    <div className='ms-2'>
-                                        <NavLink
-                                            className='text-decoration-none fs-5 text-warning ms-3'
-                                            to="/myOrders"
-                                            activeStyle={{
-                                                fontWeight: "bold",
-                                                color: "red"
-                                            }}
-                                        >
-                                            MyOrders
-                                        </NavLink>
-                                        <NavLink
-                                            className='text-decoration-none fs-5 text-warning ms-3'
-                                            to="/manageOrders"
-                                            activeStyle={{
-                                                fontWeight: "bold",
-                                                color: "red"
-                                            }}
-                                        >
-                                            ManageOrders
-                                        </NavLink>
-                                        <NavLink
-                                            className='text-decoration-none fs-5 text-warning ms-3'
-                                            to="/addServices"
-                                            activeStyle={{
-                                                fontWeight: "bold",
-                                                color: "red"
-                                            }}
-                                        >
-                                            AddNewServices
-                                        </NavLink>
-                                    </div>
+                                    user.email ?
+                                        <Button onClick={logout} className='menu-btn' variant="warning"> Logout</Button>
+                                        :
+                                        <Button onClick={handleGoogleLogin} className='menu-btn' variant="warning">Login</Button>
                                 }
 
-
-                                <div className='container'>
-
-                                    <img className='details-header  mt-2 ms-3' src={user.photoURL} alt="" />
-                                    <br />
-                                    <span className='text-dark fw-bold ms-2'>{user.displayName}</span>
+                            </div>
 
 
-                                    {
-                                        user.email ?
-                                            <Button onClick={logout} className='menu-btn' variant="warning"> Logout</Button>
-                                            :
-                                            <Button onClick={handleGoogleLogin} className='menu-btn' variant="warning">Login</Button>
-                                    }
-
-                                </div>
-
-                            </Stack>
                         </Nav>
 
                     </Navbar.Collapse>

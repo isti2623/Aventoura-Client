@@ -7,9 +7,9 @@ const AddServices = () => {
     const { user } = useAuth();
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        console.log(data);
+
         data.email = user.email;
-        console.log(data);
+
         fetch("https://radiant-escarpment-31543.herokuapp.com/addServices", {
             method: "POST",
             headers: { "content-type": "application/json" },
