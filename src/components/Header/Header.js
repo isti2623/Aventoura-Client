@@ -36,7 +36,7 @@ const Header = () => {
                         <Nav className="ms-auto">
 
                             <NavLink
-                                className='text-decoration-none mx-3 fs-5 text-warning ms-3'
+                                className='text-decoration-none mx-3 fs-5 text-warning ms-3 mt-4'
                                 to="/home"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -46,7 +46,7 @@ const Header = () => {
                                 Home
                             </NavLink>
                             <NavLink
-                                className='text-decoration-none mx-3 fs-5 text-warning'
+                                className='text-decoration-none mx-3 fs-5 text-warning mt-4'
                                 to="/about"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -56,7 +56,7 @@ const Header = () => {
                                 About
                             </NavLink>
                             <NavLink
-                                className='text-decoration-none mx-3 fs-5 text-warning'
+                                className='text-decoration-none mx-3 fs-5 text-warning mt-4'
                                 to="/services"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -66,7 +66,7 @@ const Header = () => {
                                 Services
                             </NavLink>
                             <NavLink
-                                className='text-decoration-none mx-3 fs-5 text-warning ms-2'
+                                className='text-decoration-none mx-3 fs-5 text-warning ms-2 mt-4'
                                 to="/client"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -77,7 +77,7 @@ const Header = () => {
                             </NavLink>
                             {
                                 user.email &&
-                                <div className='ms-2'>
+                                <div className='ms-2 mt-4'>
                                     <NavLink
                                         className='text-decoration-none  fs-5 text-warning'
                                         to="/myOrders"
@@ -121,7 +121,7 @@ const Header = () => {
 
                                 {
                                     user.email ?
-                                        <Button onClick={logout} className='menu-btn' variant="warning"> Logout</Button>
+                                        <Button onClick={logout} className='menu-btn' variant="warning ms-2"> Logout</Button>
                                         :
                                         <Button onClick={handleGoogleLogin} className='menu-btn' variant="warning">Login</Button>
                                 }
