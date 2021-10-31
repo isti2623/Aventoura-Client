@@ -7,7 +7,7 @@ import Service from '../Service/Service';
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('https://radiant-escarpment-31543.herokuapp.com/services')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -20,20 +20,21 @@ const Services = () => {
                 <h2 className='custom-h2 mt-5 text-center mb-5'>Your Best Choice
 
                 </h2>
-                {services.length == 0 ?
-                    <Spinner className='ms-5' animation="border" variant="warning" />
-                    :
-                    <div className="row row-cols-1 row-cols-md-3 g-4">
-                        {
-                            services.map(service => <Service
-                                key={service._id}
-                                service={service}
-                            ></Service>)
+                {
+                    services.length === 0 ?
+                        <Spinner className='ms-5' animation="border" variant="warning" />
+                        :
+                        <div className="row row-cols-1 row-cols-md-3 g-4">
+                            {
+                                services.map(service => <Service
+                                    key={service._id}
+                                    service={service}
+                                ></Service>)
 
-                        }
+                            }
 
 
-                    </div>
+                        </div>
                 }
             </div>
         </div>

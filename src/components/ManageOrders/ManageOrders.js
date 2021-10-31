@@ -4,32 +4,37 @@ import { Link } from 'react-router-dom';
 
 const ManageOrders = () => {
     const [order, setOrder] = useState([]);
+    const [reload, setReload] = useState(true);
 
     useEffect(() => {
-        fetch("https://radiant-escarpment-31543.herokuapp.com/orders")
+        fetch("http://localhost:5000/orders")
             .then((res) => res.json())
-            .then((data) => setOrder(data));
-    }, [order]);
+            .then((data) => {
+                setReload(!reload)
+                setOrder(data)
+            });
 
+    }, [reload]);
+    console.log(order)
 
     //Delete Part
 
-    const [orders, setOrders] = useState([]);
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('https://radiant-escarpment-31543.herokuapp.com/orders')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data);
+    // const [orders, setOrders] = useState([]);
+    // const [products, setProducts] = useState([]);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/orders')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setProducts(data);
 
-            })
-    }, []);
+    //         })
+    // }, []);
 
     //DELETE AN Products
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `https://radiant-escarpment-31543.herokuapp.com/orders/${id}`
+            const url = `http://localhost:5000/orders/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
@@ -38,11 +43,28 @@ const ManageOrders = () => {
                     if (data.deletedCount > 0) {
                         alert('deleted successfully');
 
-                        const remainingProducts = orders.filter(order => order._id !== id);
+                        const remainingProducts = order.filter(order => order._id !== id);
 
-                        setOrders(remainingProducts);
+                        setOrder(remainingProducts);
                     }
                 })
+        }
+
+    }
+
+    function handleConfirm(id) {
+        const proceed = window.confirm('Are you sure, you want to Confirm?');
+        if (proceed) {
+            const url = `http://localhost:5000/confirm/${id}`
+            fetch(url, {
+                method: 'PUT',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount === 1) {
+                        setReload(!reload);
+                    }
+                });
         }
 
     }
@@ -59,9 +81,13 @@ const ManageOrders = () => {
                         <th>Phone</th>
                         <th>Address</th>
                         <th>Status</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                        <th>Confirm</th>
                     </tr>
                 </thead>
                 {order?.map((pd, index) => (
+
                     <tbody>
                         <tr>
                             <td>{index}</td>
@@ -70,13 +96,16 @@ const ManageOrders = () => {
                             <td>{pd?.serviceId}</td>
                             <td>{pd?.phone}</td>
                             <td>{pd?.address}</td>
-                            <td> <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button>
-                                <Link to={`orders/update/${pd._id}`}> <Button className='ms-5' variant="success">Edit</Button></Link></td>
+                            <td>{pd?.status}</td>
+                            <td> <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button></td>
+                            <td> <Link to={`orders/update/${pd._id}`}> <Button className='ms-5' variant="success">Edit</Button></Link></td>
+                            <td> <button onClick={() => handleConfirm(pd._id)} className="btn btn-danger m-2">Confirm</button>
+                            </td>
                         </tr>
                     </tbody>
                 ))}
             </Table>
-        </div>
+        </div >
     );
 };
 

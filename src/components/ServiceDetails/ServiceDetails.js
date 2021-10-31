@@ -7,7 +7,7 @@ const ServiceDetails = () => {
     const { serviceId } = useParams();
     const [serv, setServ] = useState([]);
     useEffect(() => {
-        fetch('https://radiant-escarpment-31543.herokuapp.com/services')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServ(data))
     }, [])
@@ -24,10 +24,11 @@ const ServiceDetails = () => {
         data.email = user.email;
         data.name = user.displayName;
         data.serviceId = findServ?.title;
+        data.status = "Pending"
 
 
 
-        fetch("https://radiant-escarpment-31543.herokuapp.com/orders", {
+        fetch("http://localhost:5000/orders", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

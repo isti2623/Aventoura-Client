@@ -7,7 +7,7 @@ const UpdateOrders = () => {
     const [isUpdate, setIsUpdated] = useState(null);
     const [product, setProduct] = useState({});
     useEffect(() => {
-        fetch(`https://radiant-escarpment-31543.herokuapp.com/orders/${productId}`)
+        fetch(`http://localhost:5000/orders/${productId}`)
             .then((res) => res.json())
             .then((data) => setProduct(data));
     }, [productId]);
@@ -20,7 +20,7 @@ const UpdateOrders = () => {
     } = useForm();
     const onSubmit = (data) => {
 
-        fetch(`https://radiant-escarpment-31543.herokuapp.com/orders/${productId}`, {
+        fetch(`http://localhost:5000/orders/${productId}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
